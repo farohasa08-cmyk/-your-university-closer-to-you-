@@ -8,263 +8,53 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="theme-color" content="#1265a8">
-
-<meta name="description" content="Your University, Closer to You - University of Sirte">
-
-<link rel="manifest" href="./manifest.json">
 
 <title>جامعتك أقرب إليك</title>
 
 <style>
 
-* {
+*{box-sizing:border-box}
 
-  box-sizing: border-box;
+body{margin:0;font-family:Arial;background:#edf5fb;color:#17324d}
 
-}
+header{background:linear-gradient(130deg,#073c69,#168ac0);color:white;text-align:center;padding:30px 12px;border-radius:0 0 25px 25px}
 
-body {
+header h1{margin:5px}
 
-  margin: 0;
+.container{max-width:900px;margin:auto;padding:16px}
 
-  font-family: Arial, sans-serif;
+input{width:100%;padding:14px;border:1px solid #c8dbea;border-radius:10px;margin:8px 0;font-size:16px}
 
-  background: #eaf4fc;
+button{border:0;border-radius:10px;padding:13px;background:#1265a8;color:white;font-size:16px;cursor:pointer}
 
-  color: #183e60;
+.login{background:white;padding:20px;border-radius:16px;text-align:center;margin-top:20px}
 
-}
+#app{display:none}
 
-header {
+h2{color:#1265a8}
 
-  background: linear-gradient(135deg,#173e63,#5594bd);
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 
-  color: white;
+.item{background:white;border:1px solid #d6e7f4;border-radius:15px;padding:17px 7px;text-align:center;cursor:pointer;box-shadow:0 3px 10px #0000000b}
 
-  text-align: center;
+.item:active{transform:scale(.97)}
 
-  padding: 40px 15px;
+.icon{font-size:34px;display:block;margin-bottom:8px}
 
-}
+.item strong{font-size:14px}
 
-header h1 {
+.mapbox{display:none;background:white;padding:13px;margin-top:20px;border-radius:15px}
 
-  font-size: 32px;
+iframe{width:100%;height:330px;border:0;border-radius:10px}
 
-  margin: 10px;
+a.maplink{display:block;text-align:center;background:#168ac0;color:white;text-decoration:none;padding:13px;border-radius:10px;margin:10px 0}
 
-}
+footer{background:#0b3555;color:white;text-align:center;padding:23px 8px;margin-top:30px;line-height:1.9;font-size:13px}
 
-header p {
-
-  font-size: 18px;
-
-}
-
-.container {
-
-  max-width: 1000px;
-
-  margin: auto;
-
-  padding: 20px;
-
-}
-
-.card {
-
-  background: white;
-
-  border-radius: 25px;
-
-  padding: 25px;
-
-  margin: 20px 0;
-
-  box-shadow: 0 5px 20px #b9ccdc55;
-
-}
-
-.login {
-
-  max-width: 650px;
-
-  margin: 35px auto;
-
-  text-align: center;
-
-  padding: 40px 25px;
-
-}
-
-input {
-
-  width: 100%;
-
-  padding: 18px;
-
-  margin: 12px 0;
-
-  border: 2px solid #c4d5e3;
-
-  border-radius: 17px;
-
-  font-size: 17px;
-
-  text-align: right;
-
-}
-
-button, .map-button {
-
-  display: block;
-
-  width: 100%;
-
-  padding: 17px;
-
-  background: #28658f;
-
-  color: white;
-
-  border: none;
-
-  border-radius: 15px;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  text-decoration: none;
-
-  text-align: center;
-
-  margin-top: 12px;
-
-}
-
-button:hover, .map-button:hover {
-
-  background: #17466b;
-
-}
-
-h2 {
-
-  margin-top: 30px;
-
-}
-
-.grid {
-
-  display: grid;
-
-  grid-template-columns: repeat(2,1fr);
-
-  gap: 17px;
-
-}
-
-.place {
-
-  background: white;
-
-  padding: 25px 12px;
-
-  border-radius: 22px;
-
-  text-align: center;
-
-  cursor: pointer;
-
-  box-shadow: 0 4px 15px #b9ccdc55;
-
-  border: 2px solid transparent;
-
-}
-
-.place:hover {
-
-  border-color: #28658f;
-
-}
-
-.place .emoji {
-
-  font-size: 40px;
-
-  display: block;
-
-  margin-bottom: 15px;
-
-}
-
-.place h3 {
-
-  font-size: 19px;
-
-}
-
-.place p {
-
-  font-size: 13px;
-
-  color: #71869a;
-
-}
-
-#dashboard {
-
-  display: none;
-
-}
-
-#mapFrame {
-
-  width: 100%;
-
-  height: 330px;
-
-  border: 0;
-
-  border-radius: 20px;
-
-  margin-top: 15px;
-
-}
-
-footer {
-
-  text-align: center;
-
-  padding: 35px 15px;
-
-  color: #66829b;
-
-  line-height: 2;
-
-}
-
-.owner {
-
-  color: #174d78;
-
-  font-weight: bold;
-
-}
-
-@media(max-width: 400px) {
-
-  .grid {
-
-    grid-template-columns: 1fr;
-
-  }
-
-}
+.section-note{font-size:13px;color:#60788b}
 
 </style>
 
@@ -274,289 +64,225 @@ footer {
 
 <header>
 
-  <h1>🎓 جامعتك أقرب إليك</h1>
+<h1>🎓 جامعتك أقرب إليك</h1>
 
-  <p>Your University, Closer to You</p>
+<p>Your University, Closer to You</p>
 
-  <p>جامعة سرت | دليلك الجامعي الذكي</p>
+<p>دليلك الذكي للحرم الرئيسي - جامعة سرت</p>
 
 </header>
 
-<!-- LOGIN -->
+<div class="container">
 
-<section class="container" id="loginPage">
+<div class="login" id="login">
 
-  <div class="card login">
+<h2>تسجيل الدخول</h2>
 
-    <div style="font-size:65px">🎓</div>
+<p>أهلاً بك في دليلك الجامعي</p>
 
-    <h1>مرحباً بك</h1>
+<input id="username" placeholder="اسم المستخدم">
 
-    <p>سجل دخولك إلى عالمك الجامعي</p>
+<input id="password" type="password" placeholder="كلمة المرور">
 
-    <input id="username" type="text"
+<button style="width:100%" onclick="enterApp()">دخول</button>
 
-    placeholder="اسم المستخدم">
+<p id="error" style="color:red"></p>
 
-    <input id="password" type="password"
+</div>
 
-    placeholder="كلمة المرور">
+<div id="app">
 
-    <button onclick="login()">تسجيل الدخول</button>
+<h2>🏛️ كليات الحرم الرئيسي</h2>
 
-    <p id="message" style="color:#c0392b"></p>
+<p class="section-note">اضغطي على اسم الكلية لعرض موقعها على الخريطة.</p>
 
-    <p>دليل الطالب الجامعي - جامعة سرت</p>
+<div class="grid" id="colleges"></div>
 
-  </div>
+<h2>🏢 المرافق والخدمات الجامعية</h2>
 
-</section>
+<div class="grid" id="services"></div>
 
-<!-- MAIN PAGE -->
+<div class="mapbox" id="mapbox">
 
-<main class="container" id="dashboard">
+<h2 id="mapTitle">خريطة المكان</h2>
 
-  <div class="card">
+<iframe id="mapFrame" loading="lazy"></iframe>
 
-    <h2>🔎 ابحث عن أي مكان</h2>
+<a id="mapLink" class="maplink" target="_blank" rel="noopener">
 
-    <input id="search" type="search"
+📍 فتح الموقع في Google Maps
 
-    placeholder="اكتب اسم الكلية أو المكان"
+</a>
 
-    oninput="filterPlaces()">
+<button style="width:100%" onclick="closeMap()">إغلاق الخريطة</button>
 
-    <p>اختر المكان للوصول إلى موقعه على الخريطة.</p>
+</div>
 
-  </div>
+</div>
 
-  <h2>🏛️ الكليات</h2>
-
-  <div class="grid" id="colleges">
-
-    <div class="place" data-name="كلية تقنية المعلومات">
-
-      <span class="emoji">💻</span>
-
-      <h3>كلية تقنية المعلومات</h3>
-
-      <p>Information Technology</p>
-
-      <button onclick="openMap('كلية تقنية المعلومات جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="كلية العلوم">
-
-      <span class="emoji">🔬</span>
-
-      <h3>كلية العلوم</h3>
-
-      <p>Faculty of Science</p>
-
-      <button onclick="openMap('كلية العلوم جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="كلية الآداب">
-
-      <span class="emoji">📚</span>
-
-      <h3>كلية الآداب</h3>
-
-      <p>Faculty of Arts</p>
-
-      <button onclick="openMap('كلية الآداب جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="كلية الاقتصاد">
-
-      <span class="emoji">📊</span>
-
-      <h3>كلية الاقتصاد</h3>
-
-      <p>Faculty of Economics</p>
-
-      <button onclick="openMap('كلية الاقتصاد جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-  </div>
-
-  <h2>☕ الخدمات الجامعية</h2>
-
-  <div class="grid" id="services">
-
-    <div class="place" data-name="المكتبة">
-
-      <span class="emoji">📖</span>
-
-      <h3>المكتبة</h3>
-
-      <button onclick="openMap('مكتبة جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="الكافيتيريات">
-
-      <span class="emoji">☕</span>
-
-      <h3>الكافيتيريات</h3>
-
-      <button onclick="openMap('كافيتيريا جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="بوابة الجامعة">
-
-      <span class="emoji">🚪</span>
-
-      <h3>بوابة الجامعة</h3>
-
-      <button onclick="openMap('بوابة جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-    <div class="place" data-name="الإدارة">
-
-      <span class="emoji">🏢</span>
-
-      <h3>الإدارة</h3>
-
-      <button onclick="openMap('إدارة جامعة سرت')">الموقع والاتجاهات</button>
-
-    </div>
-
-  </div>
-
-  <div class="card">
-
-    <h2>🗺️ خريطة الجامعة</h2>
-
-    <p>استكشف المواقع الجامعية وابحث عن وجهتك.</p>
-
-    <iframe id="mapFrame"
-
-    title="خريطة جامعة سرت"
-
-    src="https://maps.google.com/maps?q=University%20of%20Sirte%20Libya&output=embed"
-
-    loading="lazy">
-
-    </iframe>
-
-    <a class="map-button"
-
-    href="https://www.google.com/maps/search/?api=1&query=University+of+Sirte+Libya"
-
-    target="_blank">
-
-    فتح الخريطة والاتجاهات
-
-    </a>
-
-  </div>
-
-  <div class="card">
-
-    <h2>💙 عن المشروع</h2>
-
-    <p>
-
-      جامعتك أقرب إليك هو مشروع طلابي يهدف إلى
-
-      تسهيل الوصول إلى الكليات والخدمات الجامعية
-
-      في جامعة سرت من خلال دليل إلكتروني وخريطة تفاعلية.
-
-    </p>
-
-  </div>
-
-  <button onclick="logout()">تسجيل الخروج</button>
-
-</main>
+</div>
 
 <footer>
 
-  <h3>جامعتك أقرب إليك 🎓</h3>
+<strong>جامعتك أقرب إليك</strong><br>
 
-  <p>Created & Developed by</p>
+Created & Developed by<br>
 
-  <p class="owner">Farah Salem Al-Hussein</p>
+Farah Salem Al-Hussein<br>
 
-  <p>University of Sirte - 2026</p>
+University of Sirte - 2026<br>
 
-  <p>© All Rights Reserved</p>
-
-  <p>Student Project</p>
+© All Rights Reserved
 
 </footer>
 
 <script>
 
-function login() {
+const campus = "جامعة سرت، الحرم الرئيسي، سرت، ليبيا";
 
-  let user = document.getElementById("username").value.trim();
+const colleges = [
 
-  let pass = document.getElementById("password").value.trim();
+["💻","كلية تقنية المعلومات"],
 
-  if(user === "" || pass === "") {
+["🏗️","كلية الهندسة"],
 
-    document.getElementById("message").innerText =
+["🔬","كلية العلوم"],
 
-    "يرجى إدخال اسم المستخدم وكلمة المرور";
+["📊","كلية الاقتصاد"],
 
-    return;
+["🌱","كلية الزراعة"],
 
-  }
+["📚","كلية التربية"],
 
-  document.getElementById("loginPage").style.display = "none";
+["⚖️","كلية القانون"],
 
-  document.getElementById("dashboard").style.display = "block";
+["📝","كلية الآداب"],
 
-  window.scrollTo(0,0);
+["🩺","كلية الطب البشري"],
 
-}
+["🏥","كلية العلوم الصحية"],
 
-function logout() {
+["🦷","كلية طب وجراحة الفم والأسنان"]
 
-  document.getElementById("dashboard").style.display = "none";
+];
 
-  document.getElementById("loginPage").style.display = "block";
+const services = [
 
-  document.getElementById("username").value = "";
+["🏛️","الإدارة العامة"],
 
-  document.getElementById("password").value = "";
+["🗂️","مكتب المسجل العام"],
 
-  window.scrollTo(0,0);
+["📖","المكتبة"],
 
-}
+["☕","الكافتيريا"],
 
-function filterPlaces() {
+["🕌","المسجد"],
 
-  let search = document.getElementById("search").value.toLowerCase();
+["🧪","المعامل والمختبرات"],
 
-  let places = document.querySelectorAll(".place");
+["🏫","القاعات الدراسية"],
 
-  places.forEach(place => {
+["💻","مركز التعليم الإلكتروني"],
 
-    let name = place.innerText.toLowerCase();
+["🚪","البوابة الرئيسية"],
 
-    place.style.display = name.includes(search) ? "block" : "none";
+["🚗","مواقف السيارات"],
+
+["🎓","شؤون الطلاب"],
+
+["📢","أماكن الأنشطة"]
+
+];
+
+function makeItems(data, target){
+
+  const container = document.getElementById(target);
+
+  data.forEach(item=>{
+
+    const card = document.createElement("div");
+
+    card.className = "item";
+
+    const icon = document.createElement("span");
+
+    icon.className = "icon";
+
+    icon.textContent = item[0];
+
+    const name = document.createElement("strong");
+
+    name.textContent = item[1];
+
+    card.append(icon,name);
+
+    card.addEventListener("click",()=>showMap(item[1]));
+
+    container.appendChild(card);
 
   });
 
 }
 
-function openMap(place) {
+makeItems(colleges,"colleges");
 
-  let url = "https://www.google.com/maps/search/?api=1&query="
+makeItems(services,"services");
 
-  + encodeURIComponent(place + " Sirte Libya");
+function enterApp(){
 
-  window.open(url, "_blank");
+  const user = document.getElementById("username").value.trim();
+
+  const pass = document.getElementById("password").value.trim();
+
+  if(!user || !pass){
+
+    document.getElementById("error").textContent =
+
+      "اكتبي اسم المستخدم وكلمة المرور";
+
+    return;
+
+  }
+
+  document.getElementById("login").style.display="none";
+
+  document.getElementById("app").style.display="block";
+
+}
+
+function showMap(place){
+
+  const search = place + "، " + campus;
+
+  const query = encodeURIComponent(search);
+
+  document.getElementById("mapTitle").textContent =
+
+    "خريطة: " + place;
+
+  document.getElementById("mapFrame").src =
+
+    "https://maps.google.com/maps?q=" + query + "&output=embed";
+
+  document.getElementById("mapLink").href =
+
+    "https://www.google.com/maps/search/?api=1&query=" + query;
+
+  document.getElementById("mapbox").style.display="block";
+
+  document.getElementById("mapbox").scrollIntoView({
+
+    behavior:"smooth"
+
+  });
+
+}
+
+function closeMap(){
+
+  document.getElementById("mapbox").style.display="none";
+
+  document.getElementById("mapFrame").src="";
 
 }
 
